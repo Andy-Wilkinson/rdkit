@@ -2855,15 +2855,16 @@ void drawWedgedBond(MolDraw2D &d2d, const Bond &bond, bool inverted,
     // empirical cutoff to make sure we don't have too many dashes in the
     // wedge:
     auto factor = d2d.scale() * (cds1 - cds2).lengthSq();
-    if (factor < 20) {
-      nDashes = 3;
-    } else if (factor < 30) {
-      nDashes = 4;
-    } else if (factor < 45) {
-      nDashes = 5;
-    } else {
-      nDashes = 6;
-    }
+    nDashes = 20;
+    // if (factor < 20) {
+    //   nDashes = 3;
+    // } else if (factor < 30) {
+    //   nDashes = 4;
+    // } else if (factor < 45) {
+    //   nDashes = 5;
+    // } else {
+    //   nDashes = 6;
+    // }
 
     int orig_lw = d2d.lineWidth();
     int tgt_lw = 1;  // use the minimum line width
